@@ -1,0 +1,25 @@
+How to see documentation on Debian systems:
+----------------------------
+
+1. Install dependencies:
+32bit ubuntu
+$ sudo apt-get install doxygen roffit cmake gcc libssl-dev libusb-1.0-0-dev libc6-dev bison flex xsltproc
+
+64bit ubuntu
+$ sudo apt-get install doxygen roffit cmake gcc libssl-dev libssl-dev:i386 libusb-1.0-0-dev:i386 libusb-1.0-0-dev libc6-dev-i386 bison:i386 flex:i386 xsltproc
+
+ Note: for 64 bit Ubuntu 18.04 do following
+$ sudo apt-get install doxygen roffit cmake gcc libssl1.0-dev libssl1.0-dev:i386 libusb-1.0-0-dev:i386 libusb-1.0-0-dev libc6-dev-i386 bison:i386 flex:i386 xsltproc pkg-config python
+
+
+2. Build documentation
+$ mkdir build
+$ cd build/
+$ cmake ..
+$ make doc 
+
+3. For detailed description on compiling zipgateway please refer to user guide 
+generated in step 2. 
+Open src/doc/html/index.hml in browser
+
+$ xdg-open src/doc/html/index.html
